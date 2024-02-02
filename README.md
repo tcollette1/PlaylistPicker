@@ -1,4 +1,6 @@
 # PlaylistPicker
 A simple internet radio automation application for scheduling playlists and station IDs, built on Mac Catalyst and the Music app. I created PlaylistPicker from an iOS app called Radio Run I designed to work on an iPhone or iPad. Since handheld device apps sleep when unattended, the playlist scheduling required human assistance to work properly, so I ported Radio Run to work exclusively for Mac Catalyst. To run PlaylistPicker as intended, there are several requirements:
 1) A fairly large music collection. To run mine 24/7, I created 7 playlists with 200 to 600 songs each. Most of them run every day, some on weekends.
-2) A few dozen audio files that serve as your station IDs. These are 5-15 seconds long in my system.
+2) A few dozen audio files that serve as your station IDs. These are 5-15 seconds long in my system. I record them using tools such as Audacity, GarageBand, and either live voice or computer speech. Give each playlist’s IDs a song and an artist name at minimum in the audio file metadata. The artist name should be consistent across each playlist they will be used within. Create one or more separate playlists for your IDs.
+3) Preferably running a MacOS that Apple currently supports—as of this writing Monterrey thru Ventura. Mac Catalyst only works from Catalina and beyond.
+On launch, you will be prompted to create at least two playlists in Playlist Set Up. 
