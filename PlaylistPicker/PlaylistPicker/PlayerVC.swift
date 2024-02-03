@@ -475,12 +475,7 @@ class PlayerVC: UIViewController {
     }
     func fetchList() {
         if myLists[0].repChoice! == "Artist" {
-            if myLists[0].playListName!.contains ("Classic Rock") {
-                fetchRockPlaylist()
-            }
-            else {
-                fetchPlaylist()
-            }
+            fetchPlaylist()
         }
         else if myLists[0].repChoice! == "Album" {
             fetchAlbumPlaylist()
