@@ -11,7 +11,7 @@ import MediaPlayer
 class PlayerVC: UIViewController {
     var songData: SongData = SongData()
     var queueArrays: QueueArrays = QueueArrays()
-    let mp = MPMusicPlayerController.systemMusicPlayer
+    let mp = MPMusicPlayerController.applicationMusicPlayer
     var timer2 = Timer()
     var isClockRunning = false
     var isEdited = false
