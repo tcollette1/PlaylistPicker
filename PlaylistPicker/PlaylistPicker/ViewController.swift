@@ -422,92 +422,24 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                     btn.isSelected = false
                 }
                 daysToPlay.removeAll()
-                daysList.text = daysToPlay.joined()
+                daysList.text = daySorter()
             }
         }
         sender.isSelected = !sender.isSelected
     }
-    @IBAction func sunDays(_ sender: UIButton!) {
-        dayName = weekdays[sender.tag - 1]
-        if sender.isSelected == true {
-            daysToPlay.removeAll(where: dayName.contains)
+    @IBAction func someDays(_ sender: UIButton!) {
+        switch sender.tag {
+        case 1,2,3,4,5,6,7:
+            dayName = weekdays[sender.tag - 1]
+            if sender.isSelected == true {
+                daysToPlay.removeAll(where: dayName.contains)
+            }
+            else {
+                daysToPlay.append(dayName)
+            }
+        default: break
         }
-        else {
-            daysToPlay.append(dayName)
-        }
-        daysList.text = daysToPlay.joined(separator: " ")
-        allButton.isHidden = true
-        sender.isSelected = !sender.isSelected
-    }
-    @IBAction func monDays(_ sender: UIButton!) {
-        dayName = weekdays[sender.tag - 1]
-        if sender.isSelected == true {
-            daysToPlay.removeAll(where: dayName.contains)
-        }
-        else {
-            daysToPlay.append(dayName)
-        }
-        daysList.text = daysToPlay.joined(separator: " ")
-        allButton.isHidden = true
-        sender.isSelected = !sender.isSelected
-    }
-    @IBAction func tuesDays(_ sender: UIButton!) {
-        dayName = weekdays[sender.tag - 1]
-        if sender.isSelected == true {
-            daysToPlay.removeAll(where: dayName.contains)
-        }
-        else {
-            daysToPlay.append(dayName)
-        }
-        daysList.text = daysToPlay.joined(separator: " ")
-        allButton.isHidden = true
-        sender.isSelected = !sender.isSelected
-    }
-    @IBAction func wedDays(_ sender: UIButton!) {
-        dayName = weekdays[sender.tag - 1]
-        if sender.isSelected == true {
-            daysToPlay.removeAll(where: dayName.contains)
-        }
-        else {
-            daysToPlay.append(dayName)
-        }
-        daysList.text = daysToPlay.joined(separator: " ")
-        allButton.isHidden = true
-        sender.isSelected = !sender.isSelected
-    }
-    @IBAction func thursDays(_ sender: UIButton!) {
-        dayName = weekdays[sender.tag - 1]
-        if sender.isSelected == true {
-            daysToPlay.removeAll(where: dayName.contains)
-        }
-        else {
-            daysToPlay.append(dayName)
-        }
-        daysList.text = daysToPlay.joined(separator: " ")
-        allButton.isHidden = true
-        sender.isSelected = !sender.isSelected
-    }
-    @IBAction func friDays(_ sender: UIButton!) {
-        dayName = weekdays[sender.tag - 1]
-        if sender.isSelected == true {
-            daysToPlay.removeAll(where: dayName.contains)
-        }
-        else {
-            daysToPlay.append(dayName)
-        }
-        daysList.text = daysToPlay.joined(separator: " ")
-        allButton.isHidden = true
-        sender.isSelected = !sender.isSelected
-    }
-    @IBAction func satDays(_ sender: UIButton!) {
-        dayName = weekdays[sender.tag - 1]
-        if sender.isSelected == true {
-            daysToPlay.removeAll(where: dayName.contains)
-        }
-        else {
-            daysToPlay.append(dayName)
-        }
-        daysList.text = daysToPlay.joined(separator: " ")
+        daysList.text = daySorter()
         allButton.isHidden = true
         sender.isSelected = !sender.isSelected
     }
